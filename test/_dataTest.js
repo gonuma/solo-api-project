@@ -7,7 +7,6 @@ const { setupServer } = require("../server");
 const cycleData = require("../src/data/cycleData");
 chai.should();
 const expect = chai.expect;
-const _ = require("underscore");
 
 const server = setupServer();
 describe("Cycling Tracker API Server Get Requests", () => {
