@@ -6,7 +6,7 @@ exports.seed = function (knex) {
       // Inserts seed entries
       return knex("cycle_data").insert([
         {
-          // id: 1,
+          id: 1,
           date: "2021-08-29",
           distance: 70,
           avg_speed: 25,
@@ -14,7 +14,7 @@ exports.seed = function (knex) {
           top_speed: 50,
         },
         {
-          // id: 2,
+          id: 2,
           date: "2021-08-30",
           distance: 100,
           avg_speed: 20,
@@ -22,7 +22,7 @@ exports.seed = function (knex) {
           top_speed: 35,
         },
         {
-          // id: 3,
+          id: 3,
           date: "2021-08-31",
           distance: 55,
           avg_speed: 28,
@@ -30,7 +30,7 @@ exports.seed = function (knex) {
           top_speed: 49,
         },
         {
-          // id: 4,
+          id: 4,
           date: "2021-09-03",
           distance: 150,
           avg_speed: 22,
@@ -38,7 +38,7 @@ exports.seed = function (knex) {
           top_speed: 55,
         },
         {
-          // id: 5,
+          id: 5,
           date: "2021-09-06",
           distance: 15,
           avg_speed: 65,
