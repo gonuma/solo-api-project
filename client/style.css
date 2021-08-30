@@ -14,3 +14,7 @@ p {
 button {
   font-size: 25px;
 }
+
+img {
+  opacity: 0;
+}
