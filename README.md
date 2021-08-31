@@ -30,7 +30,7 @@ You can delete an activity from the database by querying with an activity id as 
   
 /updateActivity  
 You can update an activity by querying with an activity id as a parameter, and inputing a partial or full entity into the query body. To update just the distance and top speed of the activity with the id 2, you would query:  
-/updateActivity/?id=2  
+`/updateActivity/?id=2`  
   
 and include the following body:  
 `{  
