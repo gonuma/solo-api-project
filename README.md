@@ -6,7 +6,7 @@ This is a simple data tracker/manipulator for cycling data
 
 # Getting Started
 
-To get download all dependencies and get started, run `npm i`
+To download all dependencies and get started, run `npm i`
 
 Next, log into psql and run `create database cycling;` create a database named `cycling`
 
