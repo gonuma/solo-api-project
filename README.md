@@ -3,12 +3,18 @@ This was created during my time as a student at Code Chrysalis.
 I created this (exceedingly) barebones API as a way to test manipulating a Postgres DB with Knex.
 This is a simple data tracker/manipulator for cycling data  
 
-#Getting Started
-
+# Getting Started
+To get download all dependencies and get started, run `npm i`  
+  
+Next, log into psql and run `create database cycling;` create a database named `cycling`  
+  
+Next, run the command `npm run migrate` to create the `cycle_data` and migration-related tables in your database
+  
+There is a seed file located in db/seeds, but it isn't currently being detected by the seed script. For now you can use the `/addActivity` API query below to seed your database with a couple entities to test with. 
   
 # Current Endpoints
 `/addActivity`  
-You can add an activity to the database with the following format:  
+You can add a single activity to the database with the following format:  
 `{  
   "date": "2021-04-01",  
    "distance":10,  
