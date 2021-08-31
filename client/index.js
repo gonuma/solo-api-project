@@ -2,9 +2,10 @@ const clickHandler = () =>
   (location.href = "https://github.com/gonuma/solo-api-project");
 
 const htmlGetUpdater = async () => {
-  await fetch(`http://localhost:5000/getActivity`)
+  const result = await fetch(`http://localhost:5000/activity`)
     .then((response) => response.json())
-    .then((data) => console.log(data));
+    .then((data) => data);
+  console.log(result);
 };
 
 const hoverHandler = () => (document.getElementById("Rick").style.opacity = 1);

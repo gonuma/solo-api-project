@@ -4,33 +4,32 @@ const db = require("../db/db");
 const router = express.Router();
 
 const reducer = (accum, currVal) => accum + currVal;
-router.post("/addActivity", async (req, res) => {
+router.post("/activity", async (req, res) => {
   await db("cycle_data").insert(req.body).returning("id");
   res.sendStatus(201);
 });
 
-router.get("/getActivity", async (req, res) => {
-  const result = { finalDat: null };
+router.get("/activity", async (req, res) => {
   if (req.query.id) {
     await db("cycle_data")
       .select("*")
       .where("id", req.query.id)
       .then((data) => {
-        result.finalDat = data;
-        res.send(result);
+        res.send(data);
+        return;
       });
     // .catch((err) => console.log(err));
   }
   await db("cycle_data")
     .select("*")
     .then((data) => {
-      result.finalDat = data;
-      res.send(result);
+      res.send(data);
+      return;
     });
   // .catch((err) => console.log(err));
 });
 
-router.get("/getAverageSpeed", async (req, res) => {
+router.get("/activity/average_speed", async (req, res) => {
   if (req.query.limit) {
     let result = [];
     await db("cycle_data")
@@ -54,13 +53,13 @@ router.get("/getAverageSpeed", async (req, res) => {
   }
 });
 
-router.delete("/deleteActivity", async (req, res) => {
+router.delete("/activity", async (req, res) => {
   await db("cycle_data").select("*").where("id", req.query.id).del();
 
   res.sendStatus(200).json("Activity deleted.");
 });
 
-router.patch("/updateActivity/", async (req, res) => {
+router.patch("/activity", async (req, res) => {
   await db("cycle_data").select("*").where("id", req.query.id).update(req.body);
   res.sendStatus(200);
 });
