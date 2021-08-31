@@ -12,7 +12,7 @@ Next, run the command `npm run migrate` to create the `cycle_data` and migration
   
 There is a seed file located in db/seeds, but it isn't currently being detected by the seed script. For now you can use the `/addActivity` API query below to seed your database with a couple entities to test with. 
   
-# Current Endpoints
+# Endpoints (As of 08/31/2021)
 `/addActivity`  
 You can add a single activity to the database with the following format:  
 `{  
