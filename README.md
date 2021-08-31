@@ -24,7 +24,7 @@ You can add a single activity to the database with the following format:
 
 You can retrieve all activities in the database  
 OR  
-YOu can view a single activity by querying with an activity id as a parameter.
+You can view a single activity by querying with an activity id as a parameter.
 
 `/activity/average_speed`  
 You can calculate and retrieve the average speed of all activities in the database  
