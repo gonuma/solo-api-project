@@ -1,5 +1,11 @@
 const clickHandler = () =>
-  (location.href = "https://github.com/gonuma/solo-api-project/tree/master");
+  (location.href = "https://github.com/gonuma/solo-api-project");
+
+const htmlGetUpdater = async () => {
+  await fetch(`http://localhost:5000/getActivity`)
+    .then((response) => response.json())
+    .then((data) => console.log(data));
+};
 
 const hoverHandler = () => (document.getElementById("Rick").style.opacity = 1);
 const byeRick = () => (document.getElementById("Rick").style.opacity = 0);
@@ -14,6 +20,7 @@ app = () => {
     <p>
     Click the button below to jump to the GitHub repository!
     </p>
+    <button onclick="htmlGetUpdater()" type="submit">Console Log "Get" Query</button>
     <button onclick="clickHandler()" type="submit" id="GitButton">GitHub Repo</button>
     <div><img id="Rick" onmouseover="hoverHandler()" onmouseleave="byeRick()" src="https://media3.giphy.com/media/ZE5DmCqNMr3yDXq1Zu/giphy.gif?cid=790b761122777ef0d1f18ac35b9b55d4a49efd2fe9047d4f&rid=giphy.gif&ct=s" alt="On a roll!"/></div>
     </div>`;

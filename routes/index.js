@@ -10,23 +10,24 @@ router.post("/addActivity", async (req, res) => {
 });
 
 router.get("/getActivity", async (req, res) => {
+  const result = { finalDat: null };
   if (req.query.id) {
     await db("cycle_data")
       .select("*")
       .where("id", req.query.id)
       .then((data) => {
-        res.send(data);
-        return res.json();
-      })
-      .catch((err) => console.log(err));
+        result.finalDat = data;
+        res.send(result);
+      });
+    // .catch((err) => console.log(err));
   }
   await db("cycle_data")
     .select("*")
     .then((data) => {
-      res.send(data);
-      return res.json();
-    })
-    .catch((err) => console.log(err));
+      result.finalDat = data;
+      res.send(result);
+    });
+  // .catch((err) => console.log(err));
 });
 
 router.get("/getAverageSpeed", async (req, res) => {
